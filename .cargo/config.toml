@@ -1,0 +1,38 @@
+# [build]
+# rustflags = [
+#     "-C", "link-arg=-nostartfiles"  
+# ]
+
+[registries.crates-io]
+protocol = "sparse"
+
+# Windows
+# 1. `cargo install -f cargo-builtins`
+# 2. `rustup component add llvm-tools-preview`
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+# Linux
+# Arch: `sudo pacman -S lld clang`
+# Ubuntu: `sudo apt-get install lld clang`
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
+
+
+# Darwin/MacOS
+# 1. `brew install michaeleisel/zld/zld`
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "linker=zld"]
+
+[target.aarch64-apple-darwin]
+rustflags = ["-C", "linker=zld"]
+
+# We want to override existing values (force = true)
+# And we want to use relative to root paths (relative = true)
+[env]
+OUT_DIRX = { value = "riscv/processed", relative = true, force = true }
+IN_DIR = { value = "riscv", relative = true, force = true }
+INC_DIR = { value = "riscv/include", relative = true, force = true }

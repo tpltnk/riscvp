@@ -1,0 +1,17 @@
+[package]
+name = "riscvp"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tit Poplatnik <33201077+tpltnk@users.noreply.github.com>"]
+
+[dependencies]
+
+
+[build-dependencies]
+cc = "1.0"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
