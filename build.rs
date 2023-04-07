@@ -24,7 +24,7 @@ fn main() {
                     .unwrap()
                     .ends_with("S")
         })
-        .map(|maybe_entry| {
+        .for_each(|maybe_entry| {
             let entry = maybe_entry.unwrap();
             fs::write(
                 PathBuf::from(OUT_DIRX).join(entry.path().file_name().unwrap()),
@@ -56,8 +56,7 @@ fn main() {
                     .display()
                     .to_string()
             );
-        })
-        .for_each(drop);
+        });
 
     add_watchers();
 }
