@@ -36,3 +36,6 @@ rustflags = ["-C", "linker=zld"]
 OUT_DIRX = { value = "riscv/processed", relative = true, force = true }
 IN_DIR = { value = "riscv", relative = true, force = true }
 INC_DIR = { value = "riscv/include", relative = true, force = true }
+
+
+[target.riscv64gc-unknown-linux-gnu]
