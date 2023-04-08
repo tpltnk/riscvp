@@ -1,3 +1,4 @@
 [submodule "qemu"]
 	path = qemu
 	url = https://github.com/qemu/qemu.git
+	branch = stable-5.0

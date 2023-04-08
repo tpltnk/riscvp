@@ -38,4 +38,5 @@ IN_DIR = { value = "riscv", relative = true, force = true }
 INC_DIR = { value = "riscv/include", relative = true, force = true }
 
 
+# https://wiki.qemu.org/Documentation/Platforms/RISCV
 [target.riscv64gc-unknown-linux-gnu]

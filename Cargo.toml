@@ -8,6 +8,7 @@ authors = ["Tit Poplatnik <33201077+tpltnk@users.noreply.github.com>"]
 
 
 [build-dependencies]
+num_cpus = "1.15.0"
 cc = "1.0"
 
 [profile.dev]
